@@ -3,6 +3,8 @@ import cors from "cors"
 import cookieParser from "cookie-parser"
 
 import authRoutes from './routes/auth';
+import eventRoutes from './routes/event';
+
 
 const app = express()
 
@@ -17,6 +19,7 @@ app.use(
 app.use(cookieParser())
 
 app.use("/api/auth", authRoutes)
+app.use("/api/events", eventRoutes)
 
 
 // Health check endpoint
