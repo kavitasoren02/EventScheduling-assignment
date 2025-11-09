@@ -1,0 +1,67 @@
+// Prisma schema for Event Scheduling Application
+// Database: PostgreSQL
+// This schema defines User, Event, and EventAttendee models
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+// User model - stores user information
+model User {
+  id        String   @id @default(cuid())
+  email     String   @unique
+  name      String
+  password  String   // hashed password
+  
+  // Relations
+  createdEvents   Event[]          @relation("EventCreator")
+  eventAttendees  EventAttendee[]  @relation("UserAttendees")
+  
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  @@map("users")
+}
+
+// Event model - stores event information
+model Event {
+  id          String   @id @default(cuid())
+  title       String
+  description String
+  date        DateTime
+  time        String   // stored as HH:mm format
+  location    String
+  
+  // Relations
+  creatorId   String
+  creator     User     @relation("EventCreator", fields: [creatorId], references: [id], onDelete: Cascade)
+  attendees   EventAttendee[] @relation("EventAttendees")
+  
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  @@map("events")
+}
+
+// EventAttendee model - join table for Event and User (RSVP system)
+model EventAttendee {
+  id        String   @id @default(cuid())
+  
+  // Relations
+  userId    String
+  user      User     @relation("UserAttendees", fields: [userId], references: [id], onDelete: Cascade)
+  
+  eventId   String
+  event     Event    @relation("EventAttendees", fields: [eventId], references: [id], onDelete: Cascade)
+  
+  joinedAt  DateTime @default(now())
+
+  // Ensure a user can only join an event once
+  @@unique([userId, eventId])
+  @@map("event_attendees")
+}
