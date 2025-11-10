@@ -20,7 +20,7 @@ const Navbar: React.FC = () => {
   return (
     <nav className="bg-blue-600 text-white shadow-md sticky top-0 z-50">
       <div className="max-w-6xl mx-auto px-4 py-4 flex items-center justify-between">
-        {/* Logo/Brand */}
+        {/* Logo*/}
         <Link to="/" className="text-2xl font-bold hover:opacity-90 transition">
           EventHub
         </Link>
@@ -64,6 +64,7 @@ const Navbar: React.FC = () => {
             </>
           ) : (
             <div className="flex justify-center items-center gap-8 w-full h-[70px]">
+    
               <Link
                 to="/login"
                 className="text-xl font-semibold w-25 h-10 flex items-center justify-center border-2 border-white text-white uppercase tracking-wide rounded-lg hover:bg-white hover:text-blue-700 transition duration-300 ease-in-out"
