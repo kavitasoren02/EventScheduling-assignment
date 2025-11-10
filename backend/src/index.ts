@@ -4,6 +4,7 @@ import cookieParser from "cookie-parser"
 
 import authRoutes from './routes/auth';
 import eventRoutes from './routes/event';
+import attendeeRoutes from './routes/attendees';
 
 
 const app = express()
@@ -20,6 +21,7 @@ app.use(cookieParser())
 
 app.use("/api/auth", authRoutes)
 app.use("/api/events", eventRoutes)
+app.use("/api/events/:eventId", attendeeRoutes)
 
 
 // Health check endpoint
