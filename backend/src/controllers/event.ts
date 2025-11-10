@@ -35,6 +35,11 @@ export const getAllEvents = async (req: Request, res: Response): Promise<void> =
 export const getEventById = async (req: Request, res: Response): Promise<void> => {
   try {
     const { id } = req.params
+    
+    if (!id) {
+      res.status(400).json({ success: false, message: "Event ID is required" })
+      return
+    }
 
     const event = await prisma.event.findUnique({
       where: { id },
@@ -104,6 +109,13 @@ export const createEvent = async (req: Request, res: Response): Promise<void> =>
 export const updateEvent = async (req: Request, res: Response): Promise<void> => {
   try {
     const { id } = req.params
+
+    
+    if (!id) {
+      res.status(400).json({ success: false, message: "Event ID is required" })
+      return
+    }
+
     const userId = req.userId
     const { title, description, date, time, location } = req.body
 
@@ -160,6 +172,12 @@ export const deleteEvent = async (req: Request, res: Response): Promise<void> =>
       return
     }
 
+    
+    if (!id) {
+      res.status(400).json({ success: false, message: "Event ID is required" })
+      return
+    }
+    
     // Find event
     const event = await prisma.event.findUnique({ where: { id } })
 
