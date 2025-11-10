@@ -1,12 +1,16 @@
-
 import './App.css'
+// import type React from "react"
+import { BrowserRouter } from "react-router-dom"
+import Navbar from './components/Navbar'
+import { AuthProvider } from "./context/AuthContext"
 
 function App() {
-
   return (
-    <>
-     <h1>Event Scheduling</h1>
-    </>
+    <AuthProvider>
+      <BrowserRouter>
+        <Navbar />
+      </BrowserRouter>
+    </AuthProvider>
   )
 }
 
