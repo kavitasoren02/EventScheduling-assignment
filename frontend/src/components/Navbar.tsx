@@ -63,7 +63,7 @@ const Navbar: React.FC = () => {
               </div>
             </>
           ) : (
-            <div className="flex justify-center items-center gap-8 w-full h-[70px]">
+            <div className="flex justify-center items-center gap-8 w-full h-[40px]">
     
               <Link
                 to="/login"

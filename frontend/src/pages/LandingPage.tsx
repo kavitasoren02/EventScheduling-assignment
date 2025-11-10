@@ -39,7 +39,7 @@ const LandingPage: React.FC = () => {
 
         {/* Feature Section */}
         <motion.div
-          className="mt-24 grid grid-cols-1 md:grid-cols-3 gap-10 max-w-6xl w-full px-4"
+          className="mt-10 grid grid-cols-1 md:grid-cols-3 gap-10 max-w-6xl w-full px-4"
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ delay: 0.8, duration: 1 }}
@@ -64,12 +64,12 @@ const LandingPage: React.FC = () => {
             <motion.div
               key={index}
               whileHover={{ scale: 1.05 }}
-              className="bg-white p-10 rounded-2xl border border-gray-200 hover:border-indigo-400 transition shadow-md hover:shadow-lg space-y-3"
+              className="bg-white p-3 rounded-2xl border border-gray-200 hover:border-indigo-400 transition shadow-md hover:shadow-lg space-y-3"
             >
               {/* 👇 Bounce Animation Added Here */}
               <motion.div
                 className="text-5xl mb-3"
-                animate={{ y: [0, -25, 0] }}
+                animate={{ y: [0, -40, 0] }}
                 transition={{
                   repeat: Infinity,
                   repeatType: "loop",
