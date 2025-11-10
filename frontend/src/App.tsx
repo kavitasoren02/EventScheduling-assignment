@@ -6,6 +6,7 @@ import { AuthProvider } from "./context/AuthContext";
 
 import LandingPage from "./pages/LandingPage";
 import SignupPage from "./pages/SignupPage"
+import LoginPage from "./pages/LoginPage";
 
 function App() {
   return (
@@ -16,6 +17,7 @@ function App() {
           <Routes>
             <Route path="/" element={<LandingPage />} />
               <Route path="/signup" element={<SignupPage />} />
+              <Route path="/login" element={<LoginPage/>} />
           </Routes>
         </div>
       </BrowserRouter>
