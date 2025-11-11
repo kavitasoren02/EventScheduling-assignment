@@ -1,4 +1,4 @@
-"use client"
+
 
 // Events Page - displays all available events
 // Shows events in a grid format with search functionality
