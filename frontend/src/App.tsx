@@ -9,6 +9,7 @@ import LandingPage from "./pages/LandingPage";
 import SignupPage from "./pages/SignupPage";
 import LoginPage from "./pages/LoginPage";
 import EventPage from "./pages/EventPage";
+import CreateEventPage from "./pages/CreateEventPage";
 
 const ProtectedRoute: React.FC<{ children: React.ReactNode }> = ({
   children,
@@ -51,6 +52,15 @@ function App() {
                 element={
                   <ProtectedRoute>
                     <EventPage />
+                  </ProtectedRoute>
+                }
+              />
+
+              <Route
+                path="/create-event"
+                element={
+                  <ProtectedRoute>
+                    <CreateEventPage />
                   </ProtectedRoute>
                 }
               />
