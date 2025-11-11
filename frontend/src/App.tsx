@@ -11,6 +11,7 @@ import LoginPage from "./pages/LoginPage";
 import EventPage from "./pages/EventPage";
 import CreateEventPage from "./pages/CreateEventPage";
 import EventDetailsPage from "./pages/EventDetailsPage";
+import EditEventPage from "./pages/EditEventPage";
 
 const ProtectedRoute: React.FC<{ children: React.ReactNode }> = ({
   children,
@@ -74,7 +75,15 @@ function App() {
                   </ProtectedRoute>
                 }
               />
-              
+
+               <Route
+                path="/edit-event/:id"
+                element={
+                  <ProtectedRoute>
+                    <EditEventPage />
+                  </ProtectedRoute>
+                }
+              />
             </Routes>
           </div>
         </EventProvider>
