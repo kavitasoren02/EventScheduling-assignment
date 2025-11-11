@@ -14,7 +14,7 @@ const Navbar: React.FC = () => {
   // Handle logout
   const handleLogout = async () => {
     await logout();
-    navigate("/login");
+    navigate("/signup");
   };
 
   return (

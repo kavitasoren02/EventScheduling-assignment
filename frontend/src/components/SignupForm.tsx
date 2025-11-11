@@ -1,4 +1,5 @@
-"use client";
+// Signup Form Component - handles new user registration
+// Shows email, name, and password inputs with validation
 
 import type React from "react";
 import { useState } from "react";

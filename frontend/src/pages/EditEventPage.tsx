@@ -1,4 +1,3 @@
-"use client"
 
 // Edit Event Page - allows event creators to edit existing events
 // Shows event form pre-filled with current event data

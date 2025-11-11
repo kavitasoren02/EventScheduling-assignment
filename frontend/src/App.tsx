@@ -30,7 +30,7 @@ const ProtectedRoute: React.FC<{ children: React.ReactNode }> = ({
   }
 
   if (!isAuthenticated) {
-    return <Navigate to="/login" replace />;
+    return <Navigate to="/" replace />;
   }
 
   return <>{children}</>;
@@ -76,7 +76,7 @@ function App() {
                 }
               />
 
-               <Route
+              <Route
                 path="/edit-event/:id"
                 element={
                   <ProtectedRoute>
@@ -84,6 +84,7 @@ function App() {
                   </ProtectedRoute>
                 }
               />
+              <Route path="*" element={<Navigate to="/" replace />} />
             </Routes>
           </div>
         </EventProvider>

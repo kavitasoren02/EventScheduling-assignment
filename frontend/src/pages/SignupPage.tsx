@@ -1,3 +1,5 @@
+// Signup Page - allows new users to register
+// Shows signup form and link to login page
 
 import type React from "react";
 import { Link } from "react-router-dom";

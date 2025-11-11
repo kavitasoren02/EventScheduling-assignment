@@ -1,3 +1,6 @@
+// Landing Page - welcome page for the Event Scheduling Application
+// Shows introduction and links to login/signup
+
 import React from "react"
 import { useNavigate } from "react-router-dom"
 import { useAuth } from "../context/AuthContext"
